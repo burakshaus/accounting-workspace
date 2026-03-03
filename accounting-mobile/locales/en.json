@@ -1,0 +1,103 @@
+{
+    "login": {
+        "title": "Welcome Back",
+        "email": "Email",
+        "password": "Password",
+        "submit": "Sign In",
+        "noAccount": "Don't have an account?",
+        "register": "Sign Up",
+        "loading": "Signing in..."
+    },
+    "register": {
+        "title": "Create Account",
+        "name": "Full Name",
+        "email": "Email",
+        "password": "Password",
+        "submit": "Create Account",
+        "hasAccount": "Already have an account?",
+        "login": "Sign In",
+        "loading": "Creating account..."
+    },
+    "dashboard": {
+        "title": "Dashboard",
+        "totalIncome": "Total Income",
+        "totalExpense": "Total Expense",
+        "netBalance": "Net Balance",
+        "totalTransactions": "Total Transactions",
+        "quickActions": "Quick Actions",
+        "income": "Income",
+        "expense": "Expense",
+        "reports": "Reports",
+        "recentTransactions": "Recent Transactions",
+        "noTransactions": "No transactions yet.",
+        "logout": "Logout"
+    },
+    "income": {
+        "title": "Income",
+        "total": "Total",
+        "addBtn": "+ Add",
+        "noRecords": "No income records yet.",
+        "addFirst": "Add first income",
+        "edit": "Edit",
+        "delete": "Delete",
+        "newTitle": "New Income",
+        "editTitle": "Edit Income",
+        "amountLabel": "Amount ($)",
+        "descLabel": "Description",
+        "catLabel": "Category",
+        "dateLabel": "Date (YYYY-MM-DD)",
+        "cancel": "Cancel",
+        "save": "Save",
+        "confirmDeleteTitle": "Delete",
+        "confirmDeleteText": "Are you sure you want to delete this income?"
+    },
+    "expense": {
+        "title": "Expenses",
+        "total": "Total",
+        "addBtn": "+ Add",
+        "noRecords": "No expense records yet.",
+        "addFirst": "Add first expense",
+        "edit": "Edit",
+        "delete": "Delete",
+        "newTitle": "New Expense",
+        "editTitle": "Edit Expense",
+        "amountLabel": "Amount ($)",
+        "descLabel": "Description",
+        "catLabel": "Category",
+        "dateLabel": "Date (YYYY-MM-DD)",
+        "cancel": "Cancel",
+        "save": "Save",
+        "confirmDeleteTitle": "Delete",
+        "confirmDeleteText": "Are you sure you want to delete this expense?"
+    },
+    "reports": {
+        "title": "Reports",
+        "noData": "No report data available.",
+        "totalIncome": "Total Income Generated",
+        "totalExpense": "Total Expenses Incurred",
+        "netBalance": "Net Balance",
+        "incomeNum": "Number of Income Entries",
+        "expenseNum": "Number of Expense Entries"
+    },
+    "categories": {
+        "food": "Food",
+        "transport": "Transport",
+        "rent": "Rent",
+        "utilities": "Utilities",
+        "entertainment": "Entertainment",
+        "other": "Other",
+        "salary": "Salary",
+        "freelance": "Freelance",
+        "investment": "Investment"
+    },
+    "common": {
+        "errorTitle": "Error",
+        "errorFetch": "Failed to load data."
+    },
+    "settings": {
+        "title": "Settings",
+        "language": "Language",
+        "selectLanguage": "Select Language",
+        "saved": "Language changed successfully!"
+    }
+}

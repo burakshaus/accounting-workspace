@@ -1,0 +1,103 @@
+{
+    "login": {
+        "title": "Willkommen zurück",
+        "email": "E-Mail",
+        "password": "Passwort",
+        "submit": "Anmelden",
+        "noAccount": "Haben Sie kein Konto?",
+        "register": "Registrieren",
+        "loading": "Anmeldung läuft..."
+    },
+    "register": {
+        "title": "Konto erstellen",
+        "name": "Vollständiger Name",
+        "email": "E-Mail",
+        "password": "Passwort",
+        "submit": "Registrieren",
+        "hasAccount": "Haben Sie bereits ein Konto?",
+        "login": "Anmelden",
+        "loading": "Konto wird erstellt..."
+    },
+    "dashboard": {
+        "title": "Übersicht",
+        "totalIncome": "Gesamteinkommen",
+        "totalExpense": "Gesamtausgaben",
+        "netBalance": "Nettosaldo",
+        "totalTransactions": "Alle Transaktionen",
+        "quickActions": "Schnellaktionen",
+        "income": "Einkommen",
+        "expense": "Ausgaben",
+        "reports": "Berichte",
+        "recentTransactions": "Letzte Transaktionen",
+        "noTransactions": "Noch keine Transaktionen.",
+        "logout": "Abmelden"
+    },
+    "income": {
+        "title": "Einkommen",
+        "total": "Gesamt",
+        "addBtn": "+ Hinzufügen",
+        "noRecords": "Noch keine Einkommensaufzeichnungen.",
+        "addFirst": "Erstes Einkommen hinzufügen",
+        "edit": "Bearbeiten",
+        "delete": "Löschen",
+        "newTitle": "Neues Einkommen",
+        "editTitle": "Einkommen bearbeiten",
+        "amountLabel": "Betrag ($)",
+        "descLabel": "Beschreibung",
+        "catLabel": "Kategorie",
+        "dateLabel": "Datum (JJJJ-MM-TT)",
+        "cancel": "Abbrechen",
+        "save": "Speichern",
+        "confirmDeleteTitle": "Löschen",
+        "confirmDeleteText": "Sind Sie sicher, dass Sie dieses Einkommen löschen möchten?"
+    },
+    "expense": {
+        "title": "Ausgaben",
+        "total": "Gesamt",
+        "addBtn": "+ Hinzufügen",
+        "noRecords": "Noch keine Ausgabenaufzeichnungen.",
+        "addFirst": "Erste Ausgabe hinzufügen",
+        "edit": "Bearbeiten",
+        "delete": "Löschen",
+        "newTitle": "Neue Ausgabe",
+        "editTitle": "Ausgabe bearbeiten",
+        "amountLabel": "Betrag ($)",
+        "descLabel": "Beschreibung",
+        "catLabel": "Kategorie",
+        "dateLabel": "Datum (JJJJ-MM-TT)",
+        "cancel": "Abbrechen",
+        "save": "Speichern",
+        "confirmDeleteTitle": "Löschen",
+        "confirmDeleteText": "Sind Sie sicher, dass Sie diese Ausgabe löschen möchten?"
+    },
+    "reports": {
+        "title": "Berichte",
+        "noData": "Keine Berichtsdaten verfügbar.",
+        "totalIncome": "Generiertes Gesamteinkommen",
+        "totalExpense": "Entstandene Gesamtausgaben",
+        "netBalance": "Nettosaldo",
+        "incomeNum": "Anzahl der Einkommenseinträge",
+        "expenseNum": "Anzahl der Ausgabeneinträge"
+    },
+    "categories": {
+        "food": "Essen",
+        "transport": "Transport",
+        "rent": "Miete",
+        "utilities": "Nebenkosten",
+        "entertainment": "Unterhaltung",
+        "other": "Sonstiges",
+        "salary": "Gehalt",
+        "freelance": "Freiberuflich",
+        "investment": "Investition"
+    },
+    "common": {
+        "errorTitle": "Fehler",
+        "errorFetch": "Daten konnten nicht geladen werden."
+    },
+    "settings": {
+        "title": "Einstellungen",
+        "language": "Sprache",
+        "selectLanguage": "Sprache auswählen",
+        "saved": "Sprache erfolgreich geändert!"
+    }
+}

@@ -5,8 +5,10 @@ import {
 } from 'react-native';
 import { router } from 'expo-router';
 import { api, saveToken } from '../../lib/api';
+import { useTranslation } from 'react-i18next';
 
 export default function LoginScreen() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -46,11 +48,11 @@ export default function LoginScreen() {
       <View style={styles.inner}>
         <View style={styles.header}>
           <Text style={styles.title}>Accounting App</Text>
-          <Text style={styles.subtitle}>Sign in to your account</Text>
+          <Text style={styles.subtitle}>{t('login.title')}</Text>
         </View>
         <View style={styles.form}>
           {error ? <Text style={styles.errorText}>{error}</Text> : null}
-          <Text style={styles.label}>Email</Text>
+          <Text style={styles.label}>{t('login.email')}</Text>
           <TextInput
             style={styles.input}
             placeholder="you@example.com"
@@ -60,7 +62,7 @@ export default function LoginScreen() {
             autoCapitalize="none"
             keyboardType="email-address"
           />
-          <Text style={styles.label}>Password</Text>
+          <Text style={styles.label}>{t('login.password')}</Text>
           <TextInput
             style={styles.input}
             placeholder="••••••••"
@@ -76,15 +78,15 @@ export default function LoginScreen() {
           >
             {loading
               ? <ActivityIndicator color="#fff" />
-              : <Text style={styles.buttonText}>Sign In</Text>
+              : <Text style={styles.buttonText}>{t('login.submit')}</Text>
             }
           </TouchableOpacity>
         </View>
 
         <View style={styles.footer}>
-          <Text style={styles.footerText}>Don't have an account? </Text>
+          <Text style={styles.footerText}>{t('login.noAccount')} </Text>
           <TouchableOpacity onPress={() => router.push('/(auth)/register')}>
-            <Text style={styles.footerLink}>Register</Text>
+            <Text style={styles.footerLink}>{t('login.register')}</Text>
           </TouchableOpacity>
         </View>
       </View>

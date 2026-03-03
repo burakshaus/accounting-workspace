@@ -1,0 +1,103 @@
+{
+    "login": {
+        "title": "Tekrar Hoşgeldiniz!",
+        "email": "E-posta",
+        "password": "Şifre",
+        "submit": "Giriş Yap",
+        "noAccount": "Hesabınız yok mu?",
+        "register": "Kayıt Ol",
+        "loading": "Giriş yapılıyor..."
+    },
+    "register": {
+        "title": "Hesap Oluştur",
+        "name": "Ad Soyad",
+        "email": "E-posta",
+        "password": "Şifre",
+        "submit": "Kayıt Ol",
+        "hasAccount": "Zaten hesabınız var mı?",
+        "login": "Giriş Yap",
+        "loading": "Hesap oluşturuluyor..."
+    },
+    "dashboard": {
+        "title": "Kontrol Paneli",
+        "totalIncome": "Toplam Gelir",
+        "totalExpense": "Toplam Gider",
+        "netBalance": "Net Bakiye",
+        "totalTransactions": "Toplam İşlem",
+        "quickActions": "Hızlı İşlemler",
+        "income": "Gelir",
+        "expense": "Gider",
+        "reports": "Raporlar",
+        "recentTransactions": "Son İşlemler",
+        "noTransactions": "Henüz işlem yok.",
+        "logout": "Çıkış Yap"
+    },
+    "income": {
+        "title": "Gelirler",
+        "total": "Toplam",
+        "addBtn": "+ Ekle",
+        "noRecords": "Henüz gelir kaydı yok.",
+        "addFirst": "İlk geliri ekle",
+        "edit": "Düzenle",
+        "delete": "Sil",
+        "newTitle": "Yeni Gelir",
+        "editTitle": "Gelir Düzenle",
+        "amountLabel": "Tutar ($)",
+        "descLabel": "Açıklama",
+        "catLabel": "Kategori",
+        "dateLabel": "Tarih (YYYY-MM-DD)",
+        "cancel": "İptal",
+        "save": "Kaydet",
+        "confirmDeleteTitle": "Sil",
+        "confirmDeleteText": "Bu geliri silmek istediğinize emin misiniz?"
+    },
+    "expense": {
+        "title": "Giderler",
+        "total": "Toplam",
+        "addBtn": "+ Ekle",
+        "noRecords": "Henüz gider kaydı yok.",
+        "addFirst": "İlk gideri ekle",
+        "edit": "Düzenle",
+        "delete": "Sil",
+        "newTitle": "Yeni Gider",
+        "editTitle": "Gider Düzenle",
+        "amountLabel": "Tutar ($)",
+        "descLabel": "Açıklama",
+        "catLabel": "Kategori",
+        "dateLabel": "Tarih (YYYY-MM-DD)",
+        "cancel": "İptal",
+        "save": "Kaydet",
+        "confirmDeleteTitle": "Sil",
+        "confirmDeleteText": "Bu gideri silmek istediğinize emin misiniz?"
+    },
+    "reports": {
+        "title": "Raporlar",
+        "noData": "Rapor verisi bulunamadı.",
+        "totalIncome": "Oluşturulan Toplam Gelir",
+        "totalExpense": "Yapılan Toplam Gider",
+        "netBalance": "Net Bakiye",
+        "incomeNum": "Gelir Kaydı Sayısı",
+        "expenseNum": "Gider Kaydı Sayısı"
+    },
+    "categories": {
+        "food": "Yemek",
+        "transport": "Ulaşım",
+        "rent": "Kira",
+        "utilities": "Faturalar",
+        "entertainment": "Eğlence",
+        "other": "Diğer",
+        "salary": "Maaş",
+        "freelance": "Serbest Çalışma",
+        "investment": "Yatırım"
+    },
+    "common": {
+        "errorTitle": "Hata",
+        "errorFetch": "Veri yüklenemedi."
+    },
+    "settings": {
+        "title": "Ayarlar",
+        "language": "Dil",
+        "selectLanguage": "Dil Seçin",
+        "saved": "Dil başarıyla değiştirildi!"
+    }
+}

@@ -62,4 +62,19 @@ public class ExpenseController : ControllerBase
         await _db.SaveChangesAsync();
         return NoContent();
     }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, ExpenseUpdateDto dto)
+    {
+        var expense = await _db.Expenses.FirstOrDefaultAsync(e => e.Id == id && e.UserId == GetUserId());
+        if (expense is null) return NotFound();
+
+        expense.Amount = dto.Amount;
+        expense.Description = dto.Description;
+        expense.Category = dto.Category;
+        expense.Date = dto.Date;
+
+        await _db.SaveChangesAsync();
+        return Ok(new ExpenseResponseDto(expense.Id, expense.Amount, expense.Description, expense.Category, expense.Date, expense.CreatedAt));
+    }
 }

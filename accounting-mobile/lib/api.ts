@@ -2,7 +2,7 @@ import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Gerçek cihaz için bilgisayarınızın local IP'si (Expo'nun gösterdiği IP ile aynı olmalı)
-export const API_URL = 'http://192.168.0.17:5064';
+export const API_URL = 'https://isocyano-karrie-shudderingly.ngrok-free.dev';
 
 export const api = axios.create({
     baseURL: API_URL,

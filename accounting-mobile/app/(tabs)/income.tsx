@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { api } from '../../lib/api';
+import { useTranslation } from 'react-i18next';
 
 type Income = {
   id: number;
@@ -16,15 +17,23 @@ type Income = {
   createdAt: string;
 };
 
-const CATEGORIES = ['Salary', 'Freelance', 'Rent', 'Investment', 'Other'];
-
-const emptyForm = { amount: '', description: '', category: 'Diğer', date: '' };
-
 export default function IncomeScreen() {
+  const { t } = useTranslation();
   const [incomes, setIncomes] = useState<Income[]>([]);
   const [loading, setLoading] = useState(true);
   const [modalVisible, setModalVisible] = useState(false);
   const [editingId, setEditingId] = useState<number | null>(null);
+
+  const CATEGORIES = [
+    t('categories.salary'),
+    t('categories.freelance'),
+    t('categories.rent'),
+    t('categories.investment'),
+    t('categories.other')
+  ];
+
+  const emptyForm = { amount: '', description: '', category: t('categories.other'), date: '' };
+
   const [form, setForm] = useState(emptyForm);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
@@ -34,7 +43,7 @@ export default function IncomeScreen() {
       const res = await api.get('/api/income');
       setIncomes(res.data);
     } catch {
-      Alert.alert('Error', 'Failed to load incomes.');
+      Alert.alert(t('common.errorTitle'), t('common.errorFetch'));
     } finally {
       setLoading(false);
     }
@@ -44,7 +53,7 @@ export default function IncomeScreen() {
 
   const openAdd = () => {
     setEditingId(null);
-    setForm({ ...emptyForm, date: new Date().toISOString().split('T')[0], category: 'Other' });
+    setForm({ ...emptyForm, date: new Date().toISOString().split('T')[0], category: t('categories.other') });
     setError('');
     setModalVisible(true);
   };
@@ -95,15 +104,15 @@ export default function IncomeScreen() {
   };
 
   const handleDelete = (id: number) => {
-    Alert.alert('Delete', 'Are you sure you want to delete this income?', [
-      { text: 'Cancel', style: 'cancel' },
+    Alert.alert(t('income.confirmDeleteTitle'), t('income.confirmDeleteText'), [
+      { text: t('income.cancel'), style: 'cancel' },
       {
-        text: 'Sil', style: 'destructive', onPress: async () => {
+        text: t('income.delete'), style: 'destructive', onPress: async () => {
           try {
             await api.delete(`/api/income/${id}`);
             fetchIncomes();
           } catch {
-            Alert.alert('Error', 'Could not delete income.');
+            Alert.alert(t('common.errorTitle'), t('common.errorFetch'));
           }
         },
       },
@@ -118,11 +127,11 @@ export default function IncomeScreen() {
       {/* Başlık */}
       <View style={styles.header}>
         <View>
-          <Text style={styles.heading}>Income</Text>
-          <Text style={styles.total}>Total: ${total.toLocaleString('en-US', { minimumFractionDigits: 2 })}</Text>
+          <Text style={styles.heading}>{t('income.title')}</Text>
+          <Text style={styles.total}>{t('income.total')}: ${total.toLocaleString('en-US', { minimumFractionDigits: 2 })}</Text>
         </View>
         <TouchableOpacity style={styles.addBtn} onPress={openAdd}>
-          <Text style={styles.addBtnText}>+ Add</Text>
+          <Text style={styles.addBtnText}>{t('income.addBtn')}</Text>
         </TouchableOpacity>
       </View>
 
@@ -131,9 +140,9 @@ export default function IncomeScreen() {
         <ActivityIndicator style={{ marginTop: 40 }} size="large" color="#1E3A5F" />
       ) : incomes.length === 0 ? (
         <View style={styles.emptyBox}>
-          <Text style={styles.emptyText}>No income records yet.</Text>
+          <Text style={styles.emptyText}>{t('income.noRecords')}</Text>
           <TouchableOpacity style={styles.emptyAddBtn} onPress={openAdd}>
-            <Text style={styles.emptyAddBtnText}>Add first income</Text>
+            <Text style={styles.emptyAddBtnText}>{t('income.addFirst')}</Text>
           </TouchableOpacity>
         </View>
       ) : (
@@ -153,10 +162,10 @@ export default function IncomeScreen() {
               </View>
               <View style={styles.cardActions}>
                 <TouchableOpacity style={styles.editBtn} onPress={() => openEdit(item)}>
-                  <Text style={styles.editBtnText}>Edit</Text>
+                  <Text style={styles.editBtnText}>{t('income.edit')}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.deleteBtn} onPress={() => handleDelete(item.id)}>
-                  <Text style={styles.deleteBtnText}>Delete</Text>
+                  <Text style={styles.deleteBtnText}>{t('income.delete')}</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -169,11 +178,11 @@ export default function IncomeScreen() {
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.modalOverlay}>
           <View style={styles.modalBox}>
             <ScrollView keyboardShouldPersistTaps="handled">
-              <Text style={styles.modalTitle}>{editingId !== null ? 'Edit Income' : 'New Income'}</Text>
+              <Text style={styles.modalTitle}>{editingId !== null ? t('income.editTitle') : t('income.newTitle')}</Text>
 
               {error ? <Text style={styles.errorText}>{error}</Text> : null}
 
-              <Text style={styles.label}>Amount ($)</Text>
+              <Text style={styles.label}>{t('income.amountLabel')}</Text>
               <TextInput
                 style={styles.input}
                 keyboardType="decimal-pad"
@@ -182,15 +191,15 @@ export default function IncomeScreen() {
                 onChangeText={(v) => setForm({ ...form, amount: v })}
               />
 
-              <Text style={styles.label}>Description</Text>
+              <Text style={styles.label}>{t('income.descLabel')}</Text>
               <TextInput
                 style={styles.input}
-                placeholder="Enter description"
+                placeholder="..."
                 value={form.description}
                 onChangeText={(v) => setForm({ ...form, description: v })}
               />
 
-              <Text style={styles.label}>Category</Text>
+              <Text style={styles.label}>{t('income.catLabel')}</Text>
               <View style={styles.categoryRow}>
                 {CATEGORIES.map((cat) => (
                   <TouchableOpacity
@@ -203,7 +212,7 @@ export default function IncomeScreen() {
                 ))}
               </View>
 
-              <Text style={styles.label}>Date (YYYY-MM-DD)</Text>
+              <Text style={styles.label}>{t('income.dateLabel')}</Text>
               <TextInput
                 style={styles.input}
                 placeholder="2024-01-15"
@@ -213,10 +222,10 @@ export default function IncomeScreen() {
 
               <View style={styles.modalButtons}>
                 <TouchableOpacity style={styles.cancelBtn} onPress={() => setModalVisible(false)}>
-                  <Text style={styles.cancelBtnText}>Cancel</Text>
+                  <Text style={styles.cancelBtnText}>{t('income.cancel')}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.saveBtn, saving && { opacity: 0.6 }]} onPress={handleSave} disabled={saving}>
-                  {saving ? <ActivityIndicator color="#fff" /> : <Text style={styles.saveBtnText}>Save</Text>}
+                  {saving ? <ActivityIndicator color="#fff" /> : <Text style={styles.saveBtnText}>{t('income.save')}</Text>}
                 </TouchableOpacity>
               </View>
             </ScrollView>
