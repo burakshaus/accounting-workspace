@@ -1,7 +1,10 @@
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 
 export default function TabsLayout() {
+  const { t } = useTranslation();
+
   return (
     <Tabs screenOptions={{
       headerShown: false,
@@ -17,14 +20,26 @@ export default function TabsLayout() {
       },
       tabBarLabelStyle: { fontSize: 12, fontWeight: '600' },
     }}>
-      <Tabs.Screen name="dashboard" options={{ title: 'Dashboard',
-        tabBarIcon: ({ color, size }) => <Ionicons name="grid-outline" size={size} color={color} /> }} />
-      <Tabs.Screen name="income" options={{ title: 'Income',
-        tabBarIcon: ({ color, size }) => <Ionicons name="arrow-down-circle-outline" size={size} color={color} /> }} />
-      <Tabs.Screen name="expense" options={{ title: 'Expense',
-        tabBarIcon: ({ color, size }) => <Ionicons name="arrow-up-circle-outline" size={size} color={color} /> }} />
-      <Tabs.Screen name="reports" options={{ title: 'Reports',
-        tabBarIcon: ({ color, size }) => <Ionicons name="bar-chart-outline" size={size} color={color} /> }} />
+      <Tabs.Screen name="dashboard" options={{
+        title: t('dashboard.title'),
+        tabBarIcon: ({ color, size }) => <Ionicons name="grid-outline" size={size} color={color} />
+      }} />
+      <Tabs.Screen name="income" options={{
+        title: t('dashboard.income'),
+        tabBarIcon: ({ color, size }) => <Ionicons name="arrow-down-circle-outline" size={size} color={color} />
+      }} />
+      <Tabs.Screen name="expense" options={{
+        title: t('dashboard.expense'),
+        tabBarIcon: ({ color, size }) => <Ionicons name="arrow-up-circle-outline" size={size} color={color} />
+      }} />
+      <Tabs.Screen name="reports" options={{
+        title: t('dashboard.reports'),
+        tabBarIcon: ({ color, size }) => <Ionicons name="bar-chart-outline" size={size} color={color} />
+      }} />
+      <Tabs.Screen name="settings" options={{
+        title: t('settings.title'),
+        tabBarIcon: ({ color, size }) => <Ionicons name="settings-outline" size={size} color={color} />
+      }} />
     </Tabs>
   );
 }

@@ -5,8 +5,10 @@ import {
 } from 'react-native';
 import { router } from 'expo-router';
 import { api, saveToken } from '../../lib/api';
+import { useTranslation } from 'react-i18next';
 
 export default function RegisterScreen() {
+  const { t } = useTranslation();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -49,12 +51,12 @@ export default function RegisterScreen() {
       <ScrollView contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps="handled">
         <View style={styles.header}>
           <Text style={styles.title}>Accounting App</Text>
-          <Text style={styles.subtitle}>Create your account</Text>
+          <Text style={styles.subtitle}>{t('register.title')}</Text>
         </View>
         <View style={styles.form}>
           {error ? <Text style={styles.errorText}>{error}</Text> : null}
 
-          <Text style={styles.label}>Full Name</Text>
+          <Text style={styles.label}>{t('register.name')}</Text>
           <TextInput
             style={styles.input}
             placeholder="John Doe"
@@ -64,7 +66,7 @@ export default function RegisterScreen() {
             autoCapitalize="words"
           />
 
-          <Text style={styles.label}>Email</Text>
+          <Text style={styles.label}>{t('register.email')}</Text>
           <TextInput
             style={styles.input}
             placeholder="you@example.com"
@@ -75,7 +77,7 @@ export default function RegisterScreen() {
             keyboardType="email-address"
           />
 
-          <Text style={styles.label}>Password</Text>
+          <Text style={styles.label}>{t('register.password')}</Text>
           <TextInput
             style={styles.input}
             placeholder="••••••••"
@@ -85,7 +87,7 @@ export default function RegisterScreen() {
             secureTextEntry
           />
 
-          <Text style={styles.label}>Confirm Password</Text>
+          <Text style={styles.label}>{t('register.password')}</Text>  {/* As confirmation */}
           <TextInput
             style={styles.input}
             placeholder="••••••••"
@@ -102,15 +104,15 @@ export default function RegisterScreen() {
           >
             {loading
               ? <ActivityIndicator color="#fff" />
-              : <Text style={styles.buttonText}>Create Account</Text>
+              : <Text style={styles.buttonText}>{t('register.submit')}</Text>
             }
           </TouchableOpacity>
         </View>
 
         <View style={styles.footer}>
-          <Text style={styles.footerText}>Already have an account? </Text>
+          <Text style={styles.footerText}>{t('register.hasAccount')} </Text>
           <TouchableOpacity onPress={() => router.back()}>
-            <Text style={styles.footerLink}>Sign In</Text>
+            <Text style={styles.footerLink}>{t('register.login')}</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

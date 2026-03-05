@@ -10,6 +10,7 @@ public class AppDbContext : DbContext
     public DbSet<User> Users => Set<User>();
     public DbSet<Income> Incomes => Set<Income>();
     public DbSet<Expense> Expenses => Set<Expense>();
+    public DbSet<Category> Categories => Set<Category>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -34,5 +35,10 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Expense>()
             .Property(e => e.Amount)
             .HasColumnType("decimal(18,2)");
+        
+        modelBuilder.Entity<Category>()
+            .HasOne(c => c.User)
+            .WithMany()
+            .HasForeignKey(c=>c.UserId);
     }
 }
