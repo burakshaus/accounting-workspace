@@ -6,6 +6,7 @@ using AccountingApi.Data;
 using AccountingApi.Models;
 using AccountingApi.DTOs;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -18,7 +19,7 @@ public class CategoryController : ControllerBase
     {
         _context = context;
     }
-    var userId = GetUserId();
+    
     private int GetUserId() => int.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value ?? "0");
 
     [HttpGet]
@@ -43,8 +44,9 @@ public class CategoryController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<CategoryDTO.CategoryResponseDTO>> GetCategory(int id)
     {
+        var UserId = GetUserId();
         var category = await _context.Categories
-            .FirstOrDefaultAsync(c => c.Id == id && c.UserId == userId);
+            .FirstOrDefaultAsync(c => c.Id == id && c.UserId == UserId);
 
         if (category == null)
         {
@@ -121,7 +123,7 @@ public class CategoryController : ControllerBase
     public async Task<IActionResult> DeleteCategory(int id)
     {
         var UserId = GetUserId();
-        var category = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id && UserId ==userId);
+        var category = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id && c.UserId == UserId);
        
         if (category == null)
         {

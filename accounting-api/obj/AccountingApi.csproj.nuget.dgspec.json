@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/burak/Documents/GitHub/accounting-workspace/accounting-api/AccountingApi.csproj": {}
+    "/home/burak/Projects/accounting-workspace/accounting-workspace/accounting-api/AccountingApi.csproj": {}
   },
   "projects": {
-    "/Users/burak/Documents/GitHub/accounting-workspace/accounting-api/AccountingApi.csproj": {
+    "/home/burak/Projects/accounting-workspace/accounting-workspace/accounting-api/AccountingApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/burak/Documents/GitHub/accounting-workspace/accounting-api/AccountingApi.csproj",
+        "projectUniqueName": "/home/burak/Projects/accounting-workspace/accounting-workspace/accounting-api/AccountingApi.csproj",
         "projectName": "AccountingApi",
-        "projectPath": "/Users/burak/Documents/GitHub/accounting-workspace/accounting-api/AccountingApi.csproj",
-        "packagesPath": "/Users/burak/.nuget/packages/",
-        "outputPath": "/Users/burak/Documents/GitHub/accounting-workspace/accounting-api/obj/",
+        "projectPath": "/home/burak/Projects/accounting-workspace/accounting-workspace/accounting-api/AccountingApi.csproj",
+        "packagesPath": "/home/burak/.nuget/packages/",
+        "outputPath": "/home/burak/Projects/accounting-workspace/accounting-workspace/accounting-api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/burak/.nuget/NuGet/NuGet.Config"
+          "/home/burak/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.124/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
