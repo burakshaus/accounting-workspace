@@ -1,6 +1,7 @@
 namespace AccountingApi.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using AccountingApi.Data;
 using AccountingApi.Models;
@@ -19,7 +20,11 @@ public class CategoryController : ControllerBase
     {
         _context = context;
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> eb891de (daily commit)
     private int GetUserId() => int.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value ?? "0");
 
     [HttpGet]
@@ -46,7 +51,11 @@ public class CategoryController : ControllerBase
     {
         var UserId = GetUserId();
         var category = await _context.Categories
+<<<<<<< HEAD
             .FirstOrDefaultAsync(c => c.Id == id && c.UserId == UserId);
+=======
+            .FirstOrDefaultAsync(c => c.Id == id && c.UserId == GetUserId());
+>>>>>>> eb891de (daily commit)
 
         if (category == null)
         {
@@ -122,8 +131,13 @@ public class CategoryController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteCategory(int id)
     {
+<<<<<<< HEAD
         var UserId = GetUserId();
         var category = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id && c.UserId == UserId);
+=======
+        var currentUserId = GetUserId();
+        var category = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id && c.UserId == currentUserId);
+>>>>>>> eb891de (daily commit)
        
         if (category == null)
         {

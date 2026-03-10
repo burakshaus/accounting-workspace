@@ -7,7 +7,10 @@ export const API_URL = 'https://isocyano-karrie-shudderingly.ngrok-free.dev';
 
 export const api = axios.create({
     baseURL: API_URL,
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+        'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': 'true',
+    },
 });
 
 // Her istekte token'ı otomatik ekle
